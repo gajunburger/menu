@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منيو مطعم كاجون برجر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .menu-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b35, #ffb935);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a1a1a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .restaurant-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info h3 {
+            color: #ffb935;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .menu-section {
+            margin-bottom: 25px;
+            background: rgba(255,181,53,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255,181,53,0.3);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffb935;
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(45deg, rgba(255,107,53,0.2), rgba(255,181,53,0.2));
+            border-radius: 10px;
+            border: 1px solid rgba(255,181,53,0.4);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: rgba(42,42,42,0.8);
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(255,107,53,0.1);
+            transform: translateX(-5px);
+            border-left-color: #ffb935;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #ffffff;
+            flex: 1;
+        }
+
+        .item-price {
+            color: #ffb935;
+            font-weight: bold;
+            font-size: 16px;
+            background: rgba(255,181,53,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .subsection {
+            margin: 15px 0;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: rgba(255,107,53,0.1);
+            border-radius: 8px;
+            border-right: 3px solid #ff6b35;
+        }
+
+        .pizza-sizes {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .size-price {
+            background: rgba(255,181,53,0.2);
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #ffb935;
+            border: 1px solid rgba(255,181,53,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b35, #ffb935);
+            border-radius: 15px;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .delivery-info {
+            background: rgba(255,107,53,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid rgba(255,107,53,0.3);
+        }
+
+        @media (max-width: 480px) {
+            .menu-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .restaurant-name {
+                font-size: 24px;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .pizza-sizes {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <div class="logo">🐂</div>
+            <h1 class="restaurant-name">GAJUN BURGER</h1>
+            <h2 style="color: #1a1a1a; font-size: 18px;">كاجون برجر</h2>
+        </div>
+
+        <div class="contact-info">
+            <h3>📍 معلومات التواصل</h3>
+            <p>📞 الهاتف: 07765875550 - 07765875551</p>
+            <p>🏢 العنوان: بغداد، جسر ديالى، الكرغولية، السايد الواحد</p>
+            <p>🏫 بناية سبورت سنتر قرب مدرسة البقيع الأهلي</p>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍛 وجبات الشرقي</h2>
+            <div class="menu-item">
+                <span class="item-name">نصف دجاج + رز حبة طويلة + علبة مرق + بيبسي</span>
+                <span class="item-price">8,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">دجاجة + رز حبة طويلة + علبتين مرق + بيبسي</span>
+                <span class="item-price">14,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🌯 وجبات الشاورما</h2>
+            <div class="menu-item">
+                <span class="item-name">شاورما دجاج صاج</span>
+                <span class="item-price">2,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">شاورما دجاج صمون حجري</span>
+                <span class="item-price">1,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">شاورما دجاج صمون كهربائي</span>
+                <span class="item-price">1,500 د.ع</span>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">وجبات الشاورما عربي</h3>
+                <div class="menu-item">
+                    <span class="item-name">وجبة عربي</span>
+                    <span class="item-price">3,000 د.ع</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">وجبة عربي وسط</span>
+                    <span class="item-price">5,000 د.ع</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">وجبة عربي كبير</span>
+                    <span class="item-price">7,500 د.ع</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">وجبة عربي عائلي</span>
+                    <span class="item-price">10,000 د.ع</span>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">كميات الشاورما</h3>
+                <div class="menu-item">
+                    <span class="item-name">نصف كيلو شاورما دجاج (مع مقبلات وسط، صمون، فتكر، بيبسي 1 لتر)</span>
+                    <span class="item-price">10,000 د.ع</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">1 كيلو شاورما دجاج (مع مقبلات كبير، صمون، فنكر، بيبسي كبير)</span>
+                    <span class="item-price">20,000 د.ع</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍗 قائمة كنتاكي</h2>
+            <div class="menu-item">
+                <span class="item-name">3 قطع كنتاكي (1 فنكر، 2 ثومية، كول سلو، 3 قطع صمون)</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">5 قطع كنتاكي (1 فنكر، 2 ثومية، كول سلو، 5 صمون)</span>
+                <span class="item-price">10,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">وجبة ستريبس (1 فنكر، 2 ثومية، كول سلو، 5 صمون)</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">وجبة ستريبس (7 قطع ستريبس، 1 فنكر، 2 نومية، 2 كول سلو، 5 صمون)</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🥪 ساندويش دجاج</h2>
+            <div class="menu-item">
+                <span class="item-name">زنجر</span>
+                <span class="item-price">3,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">تويستر كاجون</span>
+                <span class="item-price">3,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">برجر دجاج</span>
+                <span class="item-price">2,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">دبل برجر دجاج</span>
+                <span class="item-price">3,500 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍔 البرجر</h2>
+            <div class="menu-item">
+                <span class="item-name">كاجون برجر (قطعة لحم، شريحة لحم بقري مدخن، مخلل، طماطة، جبن، بصل، صوص كاجون)</span>
+                <span class="item-price">4,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">كلاسيك برجر (قطعة لحم، خس، طماطة، مخلل، صوص كلاسك)</span>
+                <span class="item-price">3,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">دبل كاجون برجر (قطعتين لحم، طماطة، خس، جبن، بصل، صلصة كاجون)</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">وجبة رويال برجر (قطعة لحم، خس، طماطة، جبن، قطعة دجاج، صوص كاجون)</span>
+                <span class="item-price">5,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">فور ستوري برجر (قطعة لحم، شاورما دجاج، جبن، مخلل)</span>
+                <span class="item-price">4,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">أمريكان برجر (قطعة لحم، لحم مفروم، صوص، جبن، فطر)</span>
+                <span class="item-price">4,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">مكسيكان برجر سبايسي (قطعة لحم، طماطة، مخلل، خس، بصل مقرمش + صوص سبايسي)</span>
+                <span class="item-price">4,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">بوكس كاجون برجر (برجر لحم، أرز، أرجو، 3 قطع كنتاكي، فنكر، نومية، كول سلو، صمون، بيبسي)</span>
+                <span class="item-price">15,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">⭐ وجبات VIP</h2>
+            <div class="menu-item">
+                <span class="item-name">صاج إيطالي دجاج</span>
+                <span class="item-price">5,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">صاج إيطالي لحم</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">لغم دجاج</span>
+                <span class="item-price">5,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">لغم لحم</span>
+                <span class="item-price">6,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍕 البيتزا</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">بيتزا دجاج</h3>
+                <div class="menu-item">
+                    <span class="item-name">بيتزا دجاج</span>
+                    <div class="pizza-sizes">
+                        <span class="size-price">وسط: 5,000 د.ع</span>
+                        <span class="size-price">كبير: 7,000 د.ع</span>
+                        <span class="size-price">عائلي: 9,000 د.ع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">بيتزا لحم</h3>
+                <div class="menu-item">
+                    <span class="item-name">بيتزا لحم</span>
+                    <div class="pizza-sizes">
+                        <span class="size-price">وسط: 6,000 د.ع</span>
+                        <span class="size-price">كبير: 8,000 د.ع</span>
+                        <span class="size-price">عائلي: 10,000 د.ع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">بيتزا ببروني</h3>
+                <div class="menu-item">
+                    <span class="item-name">بيتزا ببروني</span>
+                    <div class="pizza-sizes">
+                        <span class="size-price">وسط: 5,000 د.ع</span>
+                        <span class="size-price">كبير: 7,000 د.ع</span>
+                        <span class="size-price">عائلي: 9,000 د.ع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">بيتزا الفصول الأربعة</h3>
+                <div class="menu-item">
+                    <span class="item-name">بيتزا الفصول الأربعة</span>
+                    <div class="pizza-sizes">
+                        <span class="size-price">وسط: 6,000 د.ع</span>
+                        <span class="size-price">كبير: 8,000 د.ع</span>
+                        <span class="size-price">عائلي: 10,000 د.ع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">بيتزا خضار</h3>
+                <div class="menu-item">
+                    <span class="item-name">بيتزا خضار</span>
+                    <div class="pizza-sizes">
+                        <span class="size-price">وسط: 4,000 د.ع</span>
+                        <span class="size-price">كبير: 6,000 د.ع</span>
+                        <span class="size-price">عائلي: 7,500 د.ع</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍗 الأطباق</h2>
+            <div class="menu-item">
+                <span class="item-name">أجنحة دجاج - 6 قطع</span>
+                <span class="item-price">4,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">أجنحة دجاج - 12 قطعة</span>
+                <span class="item-price">7,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">طبق دايت</span>
+                <span class="item-price">5,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🥤 المشروبات</h2>
+            <div class="menu-item">
+                <span class="item-name">بيبسي</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">سفن</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">ميرندا</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">ديو</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍟 المقبلات</h2>
+            <div class="menu-item">
+                <span class="item-name">نوعيتين</span>
+                <span class="item-price">1,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">4 نوعيات</span>
+                <span class="item-price">3,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">5 نوعيات</span>
+                <span class="item-price">4,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🧄 الصلصات</h2>
+            <div class="menu-item">
+                <span class="item-name">ثومية</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">باريكيو</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">كول سلو</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">جبن</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">صوص سبايسي</span>
+                <span class="item-price">500 د.ع</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍟 إضافات أخرى</h2>
+            <div class="menu-item">
+                <span class="item-name">فنكر سادة</span>
+                <span class="item-price">1,000 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">فنكر بالجبن</span>
+                <span class="item-price">1,500 د.ع</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">حلقات بصل</span>
+                <span class="item-price">2,000 د.ع</span>
+            </div>
+        </div>
+
+        <div class="delivery-info">
+            <h3 style="color: #ffb935; margin-bottom: 10px;">🚚 معلومات التوصيل</h3>
+            <p>✅ التوصيل متاح لجميع مناطق بغداد</p>
+            <p>⏰ أوقات العمل: من 10 صباحاً - 12 منتصف الليل</p>
+        </div>
+
+        <div class="footer">
+            <h3>📞 للطلب اتصل الآن</h3>
+            <p style="font-size: 20px; margin: 10px 0;">07765875550 - 07765875551</p>
+            <p>شكراً لاختياركم مطعم كاجون برجر! 🍔❤️</p>
+        </div>
+    </div>
+</body>
+</html>
