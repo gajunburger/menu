@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة مطعم كاجون برجر</title>
+    <style>
+        /* أنماط CSS الأساسية */
+        :root {
+            --black: #000000;
+            --golden-yellow: #FFC800;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--golden-yellow);
+        }
+        
+        .logo {
+            max-width: 250px;
+            height: auto;
+        }
+        
+        h1 {
+            color: var(--black);
+            font-size: 28px;
+            margin: 15px 0 5px;
+        }
+        
+        h2 {
+            color: var(--golden-yellow);
+            background-color: var(--black);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 22px;
+            margin: 30px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        h3 {
+            color: var(--black);
+            border-bottom: 2px solid var(--golden-yellow);
+            padding-bottom: 5px;
+            font-size: 20px;
+            margin: 25px 0 15px;
+        }
+        
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            border-right: 3px solid var(--golden-yellow);
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .menu-section {
+            margin-bottom: 35px;
+        }
+        
+        .menu-item {
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: var(--black);
+        }
+        
+        .item-price {
+            background-color: var(--black);
+            color: var(--golden-yellow);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .item-description {
+            color: #555;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--golden-yellow), transparent);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo.png" alt="شعار كاجون برجر" class="logo">
+            <h1>مطعم كاجون برجر</h1>
+        </header>
+        
+        <div class="contact-info">
+            <p><img src="images/phone-icon.png" alt="هاتف"> الهاتف: 07765875550</p>
+            <p><img src="images/phone-icon.png" alt="هاتف"> الهاتف: 07765875551</p>
+            <p><img src="images/location-icon.png" alt="عنوان"> العنوان: بغداد، جسر ديالى، الكرغولية، السايد الواحد، بناية سبورت سنتر قرب مدرسة البقيع الأهلي</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/oriental-meals.jpg" alt="وجبات شرقي"> وجبات الشرقي</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">نصف دجاج + رز حبة طويلة + علبة مرق + بيبسي</span>
+                    <span class="item-price">8000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">دجاجة + رز حبة طويلة + علبتين مرق + بيبسي</span>
+                    <span class="item-price">14000 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/shawarma.jpg" alt="شاورما"> وجبات الشاورما</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">شاورما دجاج صاج</span>
+                    <span class="item-price">2000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">شاورما دجاج صمون حجري</span>
+                    <span class="item-price">1500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">شاورما دجاج صمون كهربائي</span>
+                    <span class="item-price">1500 دينار</span>
+                </div>
+            </div>
+            
+            <h3>وجبات الشاورما عربي</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة عربي</span>
+                    <span class="item-price">3000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة عربي وسط</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة عربي كبير</span>
+                    <span class="item-price">7500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة عربي عائلي</span>
+                    <span class="item-price">10000 دينار</span>
+                </div>
+            </div>
+            
+            <h3>كميات الشاورما</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">نصف كيلو شاورما دجاج</span>
+                    <span class="item-price">10000 دينار</span>
+                </div>
+                <div class="item-description">(مع مقبلات وسط، صمون، فتكر، بيبسي 1 لتر)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">1 كيلو شاورما دجاج</span>
+                    <span class="item-price">20000 دينار</span>
+                </div>
+                <div class="item-description">(مع مقبلات كبير، صمون، فنكر، بيبسي كبير)</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/kentucky.jpg" alt="كنتاكي"> قائمة كنتاكي</h2>
+            
+            <h3>وجبات كنتاكي</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">3 قطع كنتاكي</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+                <div class="item-description">(1 فنكر، 2 ثومية، كول سلو، 3 قطع صمون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">5 قطع كنتاكي</span>
+                    <span class="item-price">10000 دينار</span>
+                </div>
+                <div class="item-description">(1 فنكر، 2 ثومية، كول سلو، 5 صمون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة ستريبس</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+                <div class="item-description">(1 فنكر، 2 ثومية، كول سلو، 5 صمون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة ستريبس</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+                <div class="item-description">(7 قطع ستريبس، 1 فنكر، 2 نومية، 2 كول سلو، 5 صمون)</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/chicken-sandwich.jpg" alt="ساندويش دجاج"> ساندويش دجاج</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">زنجر</span>
+                    <span class="item-price">3500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">تويستر كاجون</span>
+                    <span class="item-price">3500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">برجر دجاج</span>
+                    <span class="item-price">2500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">دبل برجر دجاج</span>
+                    <span class="item-price">3500 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/burger.jpg" alt="برجر"> البرجر</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كاجون برجر</span>
+                    <span class="item-price">4000 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، شريحة لحم بقري مدخن، مخلل، طماطة، جبن، بصل، صوص كاجون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كلاسيك برجر</span>
+                    <span class="item-price">3000 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، خس، طماطة، مخلل، صوص كلاسك)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">دبل كاجون برجر</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+                <div class="item-description">(قطعتين لحم، طماطة، خس، جبن، بصل، صلصة كاجون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وجبة رويال برجر</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، خس، طماطة، جبن، قطعة دجاج، صوص كاجون)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">فور ستوري برجر</span>
+                    <span class="item-price">4500 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، شاورما دجاج، جبن، مخلل)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">أمريكان برجر</span>
+                    <span class="item-price">4500 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، لحم مفروم، صوص، جبن، فطر)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">مكسيكان برجر سبايسي</span>
+                    <span class="item-price">4000 دينار</span>
+                </div>
+                <div class="item-description">(قطعة لحم، طماطة، مخلل، خس، بصل مقرمش + صوص سبايسي)</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">بوكس كاجون برجر</span>
+                    <span class="item-price">15000 دينار</span>
+                </div>
+                <div class="item-description">(برجر لحم، أرز، أرجو، 3 قطع كنتاكي، فنكر، نومية، كول سلو، صمون، بيبسي)</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/vip-meals.jpg" alt="وجبات VIP"> وجبات VIP</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">صاج إيطالي دجاج</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">صاج إيطالي لحم</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">لغم دجاج</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">لغم لحم</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/pizza.jpg" alt="بيتزا"> البيتزا</h2>
+            
+            <h3>بيتزا دجاج</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وسط</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كبير</span>
+                    <span class="item-price">7000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">عائلي</span>
+                    <span class="item-price">9000 دينار</span>
+                </div>
+            </div>
+            
+            <h3>بيتزا لحم</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وسط</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كبير</span>
+                    <span class="item-price">8000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">عائلي</span>
+                    <span class="item-price">10000 دينار</span>
+                </div>
+            </div>
+            
+            <h3>بيتزا ببروني</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وسط</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كبير</span>
+                    <span class="item-price">7000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">عائلي</span>
+                    <span class="item-price">9000 دينار</span>
+                </div>
+            </div>
+            
+            <h3>بيتزا الفصول الأربعة</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وسط</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كبير</span>
+                    <span class="item-price">8000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">عائلي</span>
+                    <span class="item-price">10000 دينار</span>
+                </div>
+            </div>
+            
+            <h3>بيتزا خضار</h3>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">وسط</span>
+                    <span class="item-price">4000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كبير</span>
+                    <span class="item-price">6000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">عائلي</span>
+                    <span class="item-price">7500 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/dishes.jpg" alt="أطباق"> الأطباق</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">أجنحة دجاج - 6 قطع</span>
+                    <span class="item-price">4000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">أجنحة دجاج - 12 قطعة</span>
+                    <span class="item-price">7000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">طبق دايت</span>
+                    <span class="item-price">5000 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/drinks.jpg" alt="مشروبات"> المشروبات</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">بيبسي</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">سفن</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">ميرندا</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">ديو</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/appetizers.jpg" alt="مقبلات"> المقبلات</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">نوعيتين</span>
+                    <span class="item-price">1000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">4 نوعيات</span>
+                    <span class="item-price">3000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">5 نوعيات</span>
+                    <span class="item-price">4000 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/sauces.jpg" alt="صلصات"> الصلصات</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">ثومية</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">باريكيو</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">كول سلو</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">جبن</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">صوص سبايسي</span>
+                    <span class="item-price">500 دينار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <h2><img src="images/extras.jpg" alt="إضافات"> إضافات أخرى</h2>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">فنكر سادة</span>
+                    <span class="item-price">1000 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">فنكر بالجبن</span>
+                    <span class="item-price">1500 دينار</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">حلقات بصل</span>
+                    <span class="item-price">2000 دينار</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
